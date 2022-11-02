@@ -56,7 +56,7 @@ namespace AircompanyTests.Tests
         public void MyTest3()
         {
             Airport airport = new Airport(planes);
-            airport = airport.SortByMaxLoadCapacity();
+            airport = airport.SortByGetMaxLoadCapacity();
             List<Plane> planesSortedByMaxLoadCapacity = airport.GetPlanes().ToList();
 
             bool nextPlaneMaxLoadCapacityIsHigherThanCurrent = true;
@@ -64,7 +64,7 @@ namespace AircompanyTests.Tests
             {
                 Plane currentPlane = planesSortedByMaxLoadCapacity[i];
                 Plane nextPlane = planesSortedByMaxLoadCapacity[i + 1];
-                if (currentPlane.MAXLoadCapacity() > nextPlane.MAXLoadCapacity())
+                if (currentPlane.GetMaxLoadCapacity() > nextPlane.GetMaxLoadCapacity())
                 {
                     nextPlaneMaxLoadCapacityIsHigherThanCurrent = false;
                 }

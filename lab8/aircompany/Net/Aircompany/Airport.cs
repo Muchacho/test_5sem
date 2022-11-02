@@ -65,17 +65,17 @@ namespace Aircompany
 
         public Airport SortByMaxDistance()
         {
-            return new Airport(Planes.OrderBy(w => w.MAXFlightDistance()));
+            return new Airport(Planes.OrderBy(w => w.GetMaxFlightDistance()));
         }
 
         public Airport SortByMaxSpeed()
         {
-            return new Airport(Planes.OrderBy(w => w.GetMS()));
+            return new Airport(Planes.OrderBy(w => w.GetMaxSpeed()));
         }
 
-        public Airport SortByMaxLoadCapacity()
+        public Airport SortByGetMaxLoadCapacity()
         {
-            return new Airport(Planes.OrderBy(w => w.MAXLoadCapacity()));
+            return new Airport(Planes.OrderBy(w => w.GetMaxLoadCapacity()));
         }
 
 
