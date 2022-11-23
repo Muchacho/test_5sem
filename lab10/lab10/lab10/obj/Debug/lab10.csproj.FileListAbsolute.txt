@@ -1,0 +1,13 @@
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\obj\Debug\lab10.csproj.AssemblyReference.cache
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\obj\Debug\lab10.csproj.SuggestedBindingRedirects.cache
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\obj\Debug\lab10.csproj.CoreCompileInputs.cache
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\bin\Debug\selenium-manager\linux\selenium-manager
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\bin\Debug\selenium-manager\macos\selenium-manager
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\bin\Debug\selenium-manager\windows\selenium-manager.exe
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\bin\Debug\lab10.exe.config
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\bin\Debug\lab10.exe
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\bin\Debug\lab10.pdb
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\bin\Debug\WebDriver.dll
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\obj\Debug\lab10.csproj.CopyComplete
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\obj\Debug\lab10.exe
+D:\projects\BSTU\5\tests\lab10\lab10\lab10\obj\Debug\lab10.pdb
