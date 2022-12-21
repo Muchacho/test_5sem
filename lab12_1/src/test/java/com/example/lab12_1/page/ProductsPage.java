@@ -43,26 +43,9 @@ public class ProductsPage {
         Thread.sleep(5000);
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until((ExpectedConditions.elementToBeClickable(productSizeLocator))).click();
-
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until((ExpectedConditions.elementToBeClickable(mainPageLocator))).click();
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until((ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"theme-app\"]/div/div/header/div/div[1]/button")))).click();
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until((ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"sidebar\"]/div/div/nav/div/ul/li[1]/ul/li[8]/a")))).click();
-        Thread.sleep(5000);
-
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until((ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"onetrust-close-btn-container\"]/button")))).click();
-        Thread.sleep(3000);
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until((ExpectedConditions.elementToBeClickable(addProductButtonLocator1))).click();
-        Thread.sleep(5000);
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until((ExpectedConditions.elementToBeClickable(productSizeLocator))).click();
         return this;
     }
-    public boolean zaglushka(){
+    public boolean getProduct(){
         return true;
     }
 }

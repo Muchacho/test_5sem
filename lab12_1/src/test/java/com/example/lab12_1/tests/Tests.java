@@ -64,7 +64,7 @@ public class Tests {
         Boolean b = new ProductsPage(DriverSingleton.getDriver())
                 .openPage()
                 .addProduct()
-                .zaglushka();
-        Assert.assertEquals(false, b);
+                .getProduct();
+        Assert.assertEquals(true, b);
     }
 }
