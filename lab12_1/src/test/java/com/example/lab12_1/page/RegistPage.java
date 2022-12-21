@@ -30,13 +30,13 @@ public class RegistPage {
     }
 
     public String checkEmail(String email){
-        WebElement searchBar = new WebDriverWait(driver, Duration.ofSeconds(10))
+        WebElement emailBar = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until((ExpectedConditions.elementToBeClickable(emailInputLocator)));
-        searchBar.sendKeys(email);
-        WebElement notification = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until((ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"form-input__desc-email\"]"))));
+        emailBar.sendKeys(email);
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until((ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"theme-app\"]/div/div/div[2]")))).click();
+        WebElement notification = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until((ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"form-input__desc-email\"]"))));
         return notification.getText();
     }
 
@@ -44,11 +44,11 @@ public class RegistPage {
         WebElement searchBar = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until((ExpectedConditions.elementToBeClickable(phoneInputLocator)));
         searchBar.sendKeys(phone);
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until((ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"theme-app\"]/div/div/div[2]")))).click();
         WebElement notification = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until((ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"form-input__desc-phones[0].subscriberNumber\"]"))));
         System.out.println(notification.getText());
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until((ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"theme-app\"]/div/div/div[2]")))).click();
         return  notification.getText();
     }
 }

@@ -3,19 +3,34 @@ package com.example.lab12_1.tests;
 import com.example.lab12_1.driverSingleton.DriverSingleton;
 import com.example.lab12_1.page.*;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
+import java.net.MalformedURLException;
 import java.sql.Ref;
 
 public class Tests {
 
+    @BeforeMethod
+    public void beforeMethod() {
+        long id = Thread.currentThread().getId();
+        System.out.println("Before test-method. Thread id is: " + id);
+    }
+    @AfterMethod
+    public void afterMethod() {
+        long id = Thread.currentThread().getId();
+        System.out.println("After test-method. Thread id is: " + id);
+    }
     @Test
-    public void searchProduct(){
-        Boolean successful = new SearchPage(DriverSingleton.getDriver())
+    public void searchProduct() throws MalformedURLException {
+        Boolean successful = new SearchPage(DriverSingleton.getRemoteDriver())
                 .openPage()
                 .startSearch("Shirt")
                 .isResultExist();
-        Assert.assertEquals(true, successful);
+        assertThat(successful).isTrue();
+//        Assert.assertEquals(true, successful);
     }
 
     @Test
@@ -23,7 +38,7 @@ public class Tests {
         Boolean successful = new SearchPage(DriverSingleton.getDriver())
                 .openPage()
                 .checkMainPageLink();
-        Assert.assertEquals(true, successful);
+        assertThat(successful).isTrue();
     }
 
     @Test
@@ -32,7 +47,7 @@ public class Tests {
                 .openPage()
                 .changeLanguage()
                 .getHeader();
-        Assert.assertEquals("Company", header);
+        assertThat("Company").isEqualTo(header);
     }
 
     @Test
@@ -40,7 +55,7 @@ public class Tests {
         Boolean successful = new CartPage(DriverSingleton.getDriver())
                 .openPage()
                 .checkHelpPage();
-        Assert.assertEquals(true, successful);
+        assertThat(successful).isTrue();
     }
 
     @Test
@@ -48,7 +63,7 @@ public class Tests {
         String notification = new RegistPage(DriverSingleton.getDriver())
                 .openPage()
                 .checkEmail("qwe");
-        Assert.assertEquals("Введите действительный адрес электронной почты.", notification);
+        assertThat(notification).isNotEmpty();
     }
 
     @Test
@@ -56,15 +71,17 @@ public class Tests {
         String notification = new RegistPage(DriverSingleton.getDriver())
                 .openPage()
                 .checkPhone("qwe");
-        Assert.assertEquals("Неверный номер телефона", notification);
+        assertThat(notification).isNotEmpty();
+//        assertThat("Неверный номер телефона").isEqualTo(notification);
+//        Assert.assertEquals("Неверный номер телефона", notification);
     }
 
     @Test
     public void addProductToCart() throws InterruptedException {
-        Boolean b = new ProductsPage(DriverSingleton.getDriver())
+        Boolean successful = new ProductsPage(DriverSingleton.getDriver())
                 .openPage()
                 .addProduct()
                 .getProduct();
-        Assert.assertEquals(true, b);
+        assertThat(successful).isTrue();
     }
 }
